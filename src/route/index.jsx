@@ -4,7 +4,7 @@ import {
   } from "react-router-dom";
 import App from "../App.jsx";
 import Login from "../pages/Login.jsx";
-import VerifyEmail from "../pages/verifyEmail.jsx";
+// import VerifyEmail from "../pages/verifyEmail.jsx";
 import ForgotPassword from "../pages/ForgotPassword.jsx";
 import VerifyOtp from "../pages/VerifyOtp.jsx";
 import ConfirmNewPassword from "../pages/ConfirmNewPassword.jsx";
@@ -41,10 +41,10 @@ const router=createBrowserRouter([
     //     path:"/register",
     //     element:<Register/>
     // },
-    {
-        path:"/verify-email",
-        element:<VerifyEmail/>
-    },
+    // {
+    //     path:"/verify-email",
+    //     element:<VerifyEmail/>
+    // },
     {
         path:"/forgot-password",
         element:<ForgotPassword/>

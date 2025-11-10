@@ -58,3 +58,5 @@ cypress/videos/
 cypress/screenshots/
 playwright-report/
 test-results/
+
+.vercel
