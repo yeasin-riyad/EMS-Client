@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import ViewEmployeeModal from './viewEmployeeModal'
+import ViewEmployeeModal from './ViewEmployeeModal'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import EditEmployeeModal from './EditEmployeeModal'
