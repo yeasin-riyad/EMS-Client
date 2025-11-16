@@ -8,6 +8,7 @@ import Login from "../pages/Login.jsx";
 import ForgotPassword from "../pages/ForgotPassword.jsx";
 import VerifyOtp from "../pages/VerifyOtp.jsx";
 import ConfirmNewPassword from "../pages/ConfirmNewPassword.jsx";
+import EmployeeDashboard from "../pages/EmployeeDashboard.jsx";
 import AdminDashboard from "../pages/AdminDashboard.jsx";
 import PrivateRoute from "../components/PrivateRoute.jsx";
 import RoleBaseRoute from "../components/RoleBaseRoute.jsx";
@@ -22,6 +23,11 @@ import AllLeaves from "../pages/AllLeaves.jsx";
 import LeaveHistory from "../pages/LeaveHistory.jsx";
 import Attendence from "../components/attendence/Attendence.jsx";
 import AttendenceReport from "../components/attendence/AttendenceReport.jsx";
+import EmployeeSummary from "../components/employeeDashboard/EmployeeSummary.jsx";
+import ViewEmployeeProfile from "../components/employeeDashboard/ViewEmployeeProfile.jsx";
+import Leave from "../components/employeeDashboard/Leave.jsx";
+import ApplyLeaveForm from "../components/employeeDashboard/ApplyLeaveForm.jsx";
+import EmployeeSalary from "../components/employeeDashboard/EmployeeSalary.jsx";
 
 
 
@@ -31,6 +37,40 @@ const router=createBrowserRouter([
         path:"/",
         element:<App/>,
         children:[
+             {
+                path:"employee-dashboard",
+                element:<PrivateRoute>
+                    <RoleBaseRoute requiredRole="employee">
+                    <EmployeeDashboard/>
+                    </RoleBaseRoute>
+                </PrivateRoute>,
+                children:[
+                    {
+                        index:true,
+                    element:<EmployeeSummary/>
+                    },
+                    {
+                        path:"view-employee-profile/:id",
+                        element:<ViewEmployeeProfile/>
+                    },
+                    {
+                        path:'leaves',
+                        element:<Leave/>
+                    },
+                    {
+                        path:"apply-leave",
+                        element:<ApplyLeaveForm/>
+                    },
+                    {
+                        path:"employee-salary",
+                        element:<EmployeeSalary/>
+                    },
+                    {
+                        path:"setting",
+                        element:<Setting/>
+                    }
+                ]
+            },
             {
                 path:"/admin-dashboard",
                 element:<PrivateRoute>
